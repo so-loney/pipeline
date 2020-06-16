@@ -1,16 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'nginx'
-      args '-p 82:80'
+      image 'node:7-alpine'
     }
 
   }
   stages {
     stage('Test') {
       steps {
-        echo 'hello'
-        sh 'echo world'
+        sh 'node --version'
       }
     }
 

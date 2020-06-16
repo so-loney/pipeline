@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''docker --version
 docker-compose --version
-docker run -d -p 80:80 --name webserver nginx'''
+docker run -d -p 81:80 --name webserver nginx'''
       }
     }
 

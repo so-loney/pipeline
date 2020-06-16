@@ -1,11 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'nginx'
+    }
+
+  }
   stages {
     stage('Test') {
       steps {
-        sh '''docker --version
-docker-compose --version
-docker inspect nginx'''
+        echo 'hello'
       }
     }
 

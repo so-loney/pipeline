@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'nginx'
+      args '-p 82:80'
     }
 
   }

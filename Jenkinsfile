@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'whoami'
+        sh '''docker --version
+docker-compose --version
+docker run -d -p 80:80 --name webserver nginx'''
       }
     }
 

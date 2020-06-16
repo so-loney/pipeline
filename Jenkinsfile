@@ -1,11 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
+    }
+
+  }
   stages {
     stage('Test') {
       steps {
-        sh '''docker --version
-docker-compose --version
-docker run -d -p 81:80 --name webserver nginx'''
+        sh 'npm install'
       }
     }
 
